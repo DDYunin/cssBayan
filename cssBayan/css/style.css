@@ -2,6 +2,7 @@ body {
     background-color: bisque;
 }
 
+/* Контейнер, внутри которого хранится весь контент */
 .container {
     width: 80%;
     margin: 0 auto;
@@ -9,6 +10,8 @@ body {
 /* TODO повесить на страницу какой-нибудь красивый шрифт */
 /* 1 rem = 16px */
 /* 1 em = 16px */
+
+/* Название главного заголовка */
 .task-title {
     font-size: 2em;
     font-weight: bold;
@@ -16,24 +19,68 @@ body {
     text-align: center;
 }
 
-.accordion {
+/* Убираем видимость radio */
+.accordion-item__input {
+    display: none;
+}
+
+/* Стили для label */
+.content-label {
     cursor: pointer;
 }
 
-.accordion-menu__phrase {
-    display: block;
-    font-size: 1.5rem;
+/* Секция, которая содержит в себе текст мема и иконку */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
     font-weight: bold;
-    padding: 0.5rem 0 0.5rem 0.4rem;
-    background-color: rgb(57, 203, 49);
     border-radius: 0.3rem;
+    padding: 0.5rem 0.4rem 0.5rem 0.4rem;
+    background-color: rgb(27, 228, 121);
 }
 
-.accordion-item__content {
+/* Иконки для для label */
+.accordion-header__icon-down {
+    width: 1rem;
+    transition: all 1s 0.25s;
+}
+/* Секция, в которую вставляется фотография мема */
+.accordion-content {
+    max-height: 0;
     width: 90%;
     margin: 0 auto;
-    background-color: azure;
+    background-color: whitesmoke;
+    transition: all 1s;
+}
+
+/* Сама фотография мема */
+.accordion-content__image {
+    max-height: 0;
+    width: 100%;
+}
+
+/* Активируем появление контента, когда checked */
+.accordion-item__input:checked ~ .content-label .accordion-content {
+    max-height: 100vh;
     border: 0.1rem solid black;
     border-top: none;
     padding: 0.4rem;
+    transition: all 1s;
 }
+
+.accordion-item__input:checked ~ .content-label .accordion-content__image {
+    max-height: 100vh;;
+    transition: all 1s;
+}
+
+/* Активируем появление иконки, когда checked */
+.accordion-item__input:checked ~ .content-label .accordion-header__icon-down {
+    transform: rotate(0.5turn);
+    transition: all 1s 0.25s;
+}
+
+/* .accordion-item__input:checked ~ .content-label .accordion-header__icon-up {
+    display: block;
+    opacity: 1;
+} */
