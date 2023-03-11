@@ -44,11 +44,6 @@ body {
     display: none;
 }
 
-/* Стили для label */
-.content-label {
-    cursor: pointer;
-}
-
 /* Секция, которая содержит в себе текст мема и иконку */
 .accordion-header {
     display: flex;
@@ -175,3 +170,95 @@ body {
 }
 
 /* === Под desktop ===*/
+
+@media (min-width: 1920px) {
+
+    body {
+        background-color: rgb(133, 156, 157);
+    }
+
+    /* Название главного заголовка */
+    .task-title {
+        font-size: 5em;
+        margin-bottom: 3rem;
+        padding-top: 3rem;
+    }
+
+    /* Секция, которая содержит в себе текст мема и иконку */
+    .accordion-header {
+        padding: 2rem 1.5rem 2rem 1.5rem;
+        border-radius: 1rem;
+    }
+
+    /* Отступ от текста до иконки и текст*/
+    .accordion-header__text {
+        max-width: 90%;
+        font-size: 2.2rem;
+        color: blue;
+    }
+
+    /* Иконки для label */
+    .accordion-header__icon-down {
+        width: 2.5rem;
+        transition: all 1s 0.25s;
+    }
+
+    .accordion-item:last-child {
+        padding-bottom: 10rem;
+    }
+
+    /* Секция, в которую вставляется фотография мема */
+    .accordion-content {
+        width: 95%;
+        text-align: center;
+    }
+
+    /* Сама фотография мема */
+    .accordion-content__image {
+        width: 55%;
+    }
+
+    /* Стили для label */
+    .content-label {
+        cursor: pointer;
+    }
+
+    .accordion:hover .accordion-header__text{
+        color: black;
+    }
+
+    .accordion-header__icon-down {
+        display: none;
+    }
+
+    .accordion:hover .accordion-header__icon-down {
+        display: block;
+    }
+
+    .content-label:hover .accordion-header + .accordion-content {
+        max-height: 100vh;;
+        transition: all 1s;
+    }
+
+    .content-label:hover .accordion-header + .accordion-content .accordion-content__image {
+        max-height: 100vh;;
+        transition: all 1s;
+    }
+
+    .content-label:hover .accordion-header__icon-down {
+        transform: rotate(0.5turn);
+        transition: transform 1s 0.25s;
+    }
+
+    .accordion-item:active .accordion-header__text {
+        color: blue;
+    }
+
+    .accordion-item__input:checked ~ .content-label .accordion-header__text {
+        color: black;
+    }
+
+    .accordion-item__input:checked ~ .content-label:active .accordion-header__text {
+        color: blue;
+    }
+}
