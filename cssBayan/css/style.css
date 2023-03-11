@@ -126,8 +126,8 @@ body {
 
 /* === Под планшеты ===*/
 
-@media (device-width: 820px) {
-    
+@media (min-width: 820px) and (max-width: 1919.98px) {
+
     body {
         background-color: cadetblue;
     }
@@ -160,6 +160,17 @@ body {
 
     .accordion-item:last-child {
         padding-bottom: 2rem;
+    }
+
+    /* Секция, в которую вставляется фотография мема */
+    .accordion-content {
+        width: 95%;
+        text-align: center;
+    }
+
+    /* Сама фотография мема */
+    .accordion-content__image {
+        width: 55%;
     }
 }
 
