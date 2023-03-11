@@ -1,3 +1,23 @@
+/* Шрифт */
+@font-face {
+    font-family: "MyMontserrat";
+    src: url(../fonts/Montserrat-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MyMontserrat";
+    src: url(../fonts/Montserrat-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+html {
+    font-family: "MyMontserrat";
+    font-weight: bold;
+}
+
 body {
     background-color: bisque;
 }
@@ -7,7 +27,7 @@ body {
     width: 80%;
     margin: 0 auto;
 }
-/* TODO повесить на страницу какой-нибудь красивый шрифт */
+
 /* 1 rem = 16px */
 /* 1 em = 16px */
 
@@ -44,15 +64,16 @@ body {
 /* Отступ от текста до иконки */
 .accordion-header__text {
     margin-right: 1rem;
-    max-width: 11rem;
+    max-width: 85%;
 }
 
-/* Иконки для для label */
+/* Иконки для label */
 .accordion-header__icon-down {
     width: 1rem;
     fill: black;
     transition: all 1s 0.25s;
 }
+
 /* Секция, в которую вставляется фотография мема */
 .accordion-content {
     max-height: 0;
@@ -104,5 +125,42 @@ body {
 }
 
 /* === Под планшеты ===*/
+
+@media (device-width: 820px) {
+    
+    body {
+        background-color: cadetblue;
+    }
+
+    /* Название главного заголовка */
+    .task-title {
+        font-size: 4em;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+    }
+
+    /* Секция, которая содержит в себе текст мема и иконку */
+    .accordion-header {
+        padding: 1.5rem 1.4rem 1.5rem 1.4rem;
+        border-radius: 1rem;
+    }
+
+    /* Отступ от текста до иконки и текст*/
+    .accordion-header__text {
+        max-width: 90%;
+        font-size: 1.5rem;
+    }
+
+    /* Иконки для label */
+    .accordion-header__icon-down {
+        width: 1.5rem;
+        fill: black;
+        transition: all 1s 0.25s;
+    }
+
+    .accordion-item:last-child {
+        padding-bottom: 2rem;
+    }
+}
 
 /* === Под desktop ===*/
