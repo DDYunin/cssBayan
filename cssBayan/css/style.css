@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    background-color: bisque;
+    background-color: rgb(226, 224, 218);
 }
 
 /* Контейнер, внутри которого хранится весь контент */
@@ -53,7 +53,7 @@ body {
     font-weight: bold;
     border-radius: 0.3rem;
     padding: 0.5rem 0.4rem 0.5rem 0.4rem;
-    background-color: rgb(27, 228, 121);
+    background-color: rgb(188, 190, 199);
 }
 
 /* Отступ от текста до иконки */
@@ -111,21 +111,17 @@ body {
 }
 
 .accordion-item:active .accordion-header__text {
-    color: blue;
+    color: rgb(236, 236, 241);
 }
 
 .content-label:active svg{
-    fill: blue;
+    fill: rgb(236, 236, 241);
     transition: fill;
 }
 
 /* === Под планшеты ===*/
 
 @media (min-width: 820px) and (max-width: 1919.98px) {
-
-    body {
-        background-color: cadetblue;
-    }
 
     /* Название главного заголовка */
     .task-title {
@@ -149,8 +145,6 @@ body {
     /* Иконки для label */
     .accordion-header__icon-down {
         width: 1.5rem;
-        fill: black;
-        transition: all 1s 0.25s;
     }
 
     .accordion-item:last-child {
@@ -173,10 +167,6 @@ body {
 
 @media (min-width: 1920px) {
 
-    body {
-        background-color: rgb(133, 156, 157);
-    }
-
     /* Название главного заголовка */
     .task-title {
         font-size: 5em;
@@ -194,13 +184,13 @@ body {
     .accordion-header__text {
         max-width: 90%;
         font-size: 2.2rem;
-        color: blue;
+        color: rgb(102, 68, 68);
     }
 
     /* Иконки для label */
     .accordion-header__icon-down {
+        display: none;
         width: 2.5rem;
-        transition: all 1s 0.25s;
     }
 
     .accordion-item:last-child {
@@ -223,12 +213,9 @@ body {
         cursor: pointer;
     }
 
+    /* Когда аркадион активный цвет всего текста чёрный */
     .accordion:hover .accordion-header__text{
         color: black;
-    }
-
-    .accordion-header__icon-down {
-        display: none;
     }
 
     .accordion:hover .accordion-header__icon-down {
@@ -238,6 +225,8 @@ body {
     .content-label:hover .accordion-header + .accordion-content {
         max-height: 100vh;;
         transition: all 1s;
+        border: 0.1rem solid black;
+        border-top: none;
     }
 
     .content-label:hover .accordion-header + .accordion-content .accordion-content__image {
@@ -251,7 +240,7 @@ body {
     }
 
     .accordion-item:active .accordion-header__text {
-        color: blue;
+        color: rgb(236, 236, 241);
     }
 
     .accordion-item__input:checked ~ .content-label .accordion-header__text {
@@ -259,6 +248,6 @@ body {
     }
 
     .accordion-item__input:checked ~ .content-label:active .accordion-header__text {
-        color: blue;
+        color: rgb(236, 236, 241);
     }
 }
