@@ -1,0 +1,253 @@
+/* Шрифт */
+@font-face {
+    font-family: "MyMontserrat";
+    src: url(../fonts/Montserrat-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MyMontserrat";
+    src: url(../fonts/Montserrat-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+html {
+    font-family: "MyMontserrat";
+    font-weight: bold;
+}
+
+body {
+    background-color: rgb(226, 224, 218);
+}
+
+/* Контейнер, внутри которого хранится весь контент */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* 1 rem = 16px */
+/* 1 em = 16px */
+
+/* Название главного заголовка */
+.task-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Убираем видимость radio */
+.accordion-item__input {
+    display: none;
+}
+
+/* Секция, которая содержит в себе текст мема и иконку */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    padding: 0.5rem 0.4rem 0.5rem 0.4rem;
+    background-color: rgb(188, 190, 199);
+}
+
+/* Отступ от текста до иконки */
+.accordion-header__text {
+    margin-right: 1rem;
+    max-width: 85%;
+}
+
+/* Иконки для label */
+.accordion-header__icon-down {
+    width: 1rem;
+    fill: black;
+    transition: all 1s 0.25s;
+}
+
+/* Секция, в которую вставляется фотография мема */
+.accordion-content {
+    max-height: 0;
+    width: 90%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    transition: all 1s;
+}
+
+/* Сама фотография мема */
+.accordion-content__image {
+    max-height: 0;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+/* Активируем появление контента, когда checked */
+.accordion-item__input:checked ~ .content-label .accordion-content {
+    max-height: 100vh;
+    border: 0.1rem solid black;
+    border-top: none;
+    padding: 0.4rem;
+    transition: all 1s;
+}
+
+.accordion-item__input:checked ~ .content-label .accordion-content__image {
+    max-height: 100vh;;
+    transition: all 1s;
+}
+
+/* Активируем появление иконки, когда checked */
+.accordion-item__input:checked ~ .content-label .accordion-header__icon-down {
+    transform: rotate(0.5turn);
+    transition: transform 1s 0.25s;
+}
+
+/* Стили что происходят при клике */
+.accordion-item:active {
+    opacity: 0.8;
+}
+
+.accordion-item:active .accordion-header__text {
+    color: rgb(236, 236, 241);
+}
+
+.content-label:active svg{
+    fill: rgb(236, 236, 241);
+    transition: fill;
+}
+
+/* === Под планшеты ===*/
+
+@media (min-width: 820px) and (max-width: 1919.98px) {
+
+    /* Название главного заголовка */
+    .task-title {
+        font-size: 4em;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+    }
+
+    /* Секция, которая содержит в себе текст мема и иконку */
+    .accordion-header {
+        padding: 1.5rem 1.4rem 1.5rem 1.4rem;
+        border-radius: 1rem;
+    }
+
+    /* Отступ от текста до иконки и текст*/
+    .accordion-header__text {
+        max-width: 90%;
+        font-size: 1.5rem;
+    }
+
+    /* Иконки для label */
+    .accordion-header__icon-down {
+        width: 1.5rem;
+    }
+
+    .accordion-item:last-child {
+        padding-bottom: 2rem;
+    }
+
+    /* Секция, в которую вставляется фотография мема */
+    .accordion-content {
+        width: 95%;
+        text-align: center;
+    }
+
+    /* Сама фотография мема */
+    .accordion-content__image {
+        width: 55%;
+    }
+}
+
+/* === Под desktop ===*/
+
+@media (min-width: 1920px) {
+
+    /* Название главного заголовка */
+    .task-title {
+        font-size: 5em;
+        margin-bottom: 3rem;
+        padding-top: 3rem;
+    }
+
+    /* Секция, которая содержит в себе текст мема и иконку */
+    .accordion-header {
+        padding: 2rem 1.5rem 2rem 1.5rem;
+        border-radius: 1rem;
+    }
+
+    /* Отступ от текста до иконки и текст*/
+    .accordion-header__text {
+        max-width: 90%;
+        font-size: 2.2rem;
+        color: rgb(102, 68, 68);
+    }
+
+    /* Иконки для label */
+    .accordion-header__icon-down {
+        display: none;
+        width: 2.5rem;
+    }
+
+    .accordion-item:last-child {
+        padding-bottom: 10rem;
+    }
+
+    /* Секция, в которую вставляется фотография мема */
+    .accordion-content {
+        width: 95%;
+        text-align: center;
+    }
+
+    /* Сама фотография мема */
+    .accordion-content__image {
+        width: 55%;
+    }
+
+    /* Стили для label */
+    .content-label {
+        cursor: pointer;
+    }
+
+    /* Когда аркадион активный цвет всего текста чёрный */
+    .accordion:hover .accordion-header__text{
+        color: black;
+    }
+
+    .accordion:hover .accordion-header__icon-down {
+        display: block;
+    }
+
+    .content-label:hover .accordion-header + .accordion-content {
+        max-height: 100vh;;
+        transition: all 1s;
+        border: 0.1rem solid black;
+        border-top: none;
+    }
+
+    .content-label:hover .accordion-header + .accordion-content .accordion-content__image {
+        max-height: 100vh;;
+        transition: all 1s;
+    }
+
+    .content-label:hover .accordion-header__icon-down {
+        transform: rotate(0.5turn);
+        transition: transform 1s 0.25s;
+    }
+
+    .accordion-item:active .accordion-header__text {
+        color: rgb(236, 236, 241);
+    }
+
+    .accordion-item__input:checked ~ .content-label .accordion-header__text {
+        color: black;
+    }
+
+    .accordion-item__input:checked ~ .content-label:active .accordion-header__text {
+        color: rgb(236, 236, 241);
+    }
+}
